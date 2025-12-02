@@ -48,7 +48,7 @@ class Condition
         return $this;
     }
 
-    public function else(\Closure $next = null)
+    public function else(?\Closure $next = null)
     {
         $self = $this;
 
@@ -129,7 +129,7 @@ class Condition
         return $this->result;
     }
 
-    protected function call(\Closure $callback, $column = null)
+    protected function call(?\Closure $callback, $column = null)
     {
         $column = $column ?: $this->column;
 

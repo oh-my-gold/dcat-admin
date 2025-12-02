@@ -60,13 +60,13 @@ use Symfony\Component\HttpFoundation\Response;
  * @method Field\SwitchField switch($column, $label = '')
  * @method Field\Display display($column, $label = '')
  * @method Field\Rate rate($column, $label = '')
- * @method Field\Divide divider(string $title = null)
+ * @method Field\Divide divider(?string $title = null)
  * @method Field\Password password($column, $label = '')
  * @method Field\Decimal decimal($column, $label = '')
  * @method Field\Html html($html, $label = '')
  * @method Field\Tags tags($column, $label = '')
  * @method Field\Icon icon($column, $label = '')
- * @method Field\Embeds embeds($column, $label = '', Closure $callback = null)
+ * @method Field\Embeds embeds($column, $label = '', ?Closure $callback = null)
  * @method Field\Captcha captcha()
  * @method Field\Listbox listbox($column, $label = '')
  * @method Field\File file($column, $label = '')
@@ -86,7 +86,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @method Field\ArrayField array($column, $labelOrCallback, $callback = null)
  * @method Field\SelectTable selectTable($column, $label = '')
  * @method Field\MultipleSelectTable multipleSelectTable($column, $label = '')
- * @method Field\Button button(string $html = null)
+ * @method Field\Button button(?string $html = null)
  * @method Field\Autocomplete autocomplete($column, $label = '')
  */
 class Form implements Renderable
@@ -285,7 +285,7 @@ class Form implements Renderable
      * @param  \Closure  $callback
      * @param  Request  $request
      */
-    public function __construct($repository = null, ?Closure $callback = null, Request $request = null)
+    public function __construct($repository = null, ?Closure $callback = null, ?Request $request = null)
     {
         $this->repository = $repository ? Admin::repository($repository) : null;
         $this->callback = $callback;
@@ -736,7 +736,7 @@ class Form implements Renderable
      * @param  array  $updates
      * @return $this|array
      */
-    public function updates(array $updates = null)
+    public function updates(?array $updates = null)
     {
         if ($updates === null) {
             return $this->updates;
@@ -1695,7 +1695,7 @@ class Form implements Renderable
      * @param  Closure  $callback
      * @return bool|void
      */
-    public function inDialog(\Closure $callback = null)
+    public function inDialog(?\Closure $callback = null)
     {
         if (! $callback) {
             return DialogForm::is();

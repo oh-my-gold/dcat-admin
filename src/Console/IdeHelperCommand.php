@@ -48,11 +48,11 @@ class IdeHelperCommand extends Command
      */
     protected $templates = [
         'grid' => [
-            'method'   => '* @method Grid\Column|Collection %s(string $label = null)',
+            'method'   => '* @method Grid\Column|Collection %s(?string $label = null)',
             'property' => '* @property Grid\Column|Collection %s',
         ],
         'show' => [
-            'method'   => '* @method Show\Field|Collection %s(string $label = null)',
+            'method'   => '* @method Show\Field|Collection %s(?string $label = null)',
             'property' => '* @property Show\Field|Collection %s',
         ],
         'form'        => '* @method %s %s(...$params)',
