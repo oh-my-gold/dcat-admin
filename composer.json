@@ -1,5 +1,5 @@
 {
-    "name": "dcat/laravel-admin",
+    "name": "oh-my-gold/laravel-admin",
     "description": "dcat admin",
     "type": "library",
     "keywords": [
@@ -10,7 +10,7 @@
         "form",
         "laravel admin"
     ],
-    "homepage": "https://github.com/jqhph/dcat-admin",
+    "homepage": "https://github.com/oh-my-gold/dcat-admin",
     "license": "MIT",
     "authors": [
         {
