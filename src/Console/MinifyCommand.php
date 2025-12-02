@@ -17,8 +17,8 @@ class MinifyCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'admin:minify {name} 
-        {--color= : Theme color code} 
+    protected $signature = 'admin:minify {name}
+        {--color= : Theme color code}
         {--publish : Publish assets files}';
 
     /**
@@ -119,7 +119,7 @@ class MinifyCommand extends Command
         }
 
         $mixFile = $this->getMixFile();
-        $contents = str_replace('let theme = null', "let theme = '{$name}'", $this->files->get($mixFile));
+        $contents = str_replace('?let theme = null', "let theme = '{$name}'", $this->files->get($mixFile));
         $this->files->put($mixFile, $contents);
 
         $colorFile = $this->getColorFile();

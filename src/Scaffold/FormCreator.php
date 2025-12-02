@@ -10,7 +10,7 @@ trait FormCreator
      * @param  bool  $timestamps
      * @return string
      */
-    protected function generateForm(string $primaryKey = null, array $fields = [], $timestamps = null)
+    protected function generateForm(?string $primaryKey = null, array $fields = [], $timestamps = null)
     {
         $primaryKey = $primaryKey ?: request('primary_key', 'id');
         $fields = $fields ?: request('fields', []);
@@ -36,7 +36,7 @@ EOF
         }
         if ($timestamps) {
             $rows[] = <<<'EOF'
-        
+
             $form->display('created_at');
             $form->display('updated_at');
 EOF;

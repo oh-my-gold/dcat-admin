@@ -9,7 +9,7 @@ trait GridCreator
      * @param  array  $fields
      * @return string
      */
-    protected function generateGrid(string $primaryKey = null, array $fields = [], $timestamps = null)
+    protected function generateGrid(?string $primaryKey = null, array $fields = [], $timestamps = null)
     {
         $primaryKey = $primaryKey ?: request('primary_key', 'id');
         $fields = $fields ?: request('fields', []);
@@ -37,10 +37,10 @@ trait GridCreator
         }
 
         $rows[] = <<<EOF
-        
+
             \$grid->filter(function (Grid\Filter \$filter) {
                 \$filter->equal('$primaryKey');
-        
+
             });
 EOF;
 
